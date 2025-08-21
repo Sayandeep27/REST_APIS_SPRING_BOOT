@@ -9,7 +9,7 @@ public class WelcomeController {
     // Home Page
     @GetMapping("/")
     public String home() {
-        return "index";   // loads index.html from templates
+        return "index";   // loads index.html
     }
 
     // Welcome Page

@@ -1,58 +1,32 @@
-/* style.css */
-
-/* Apply a global pink background with some padding */
+/* Global Styles */
 body {
     background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffe4e1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     padding: 40px;
     color: #333;
+    margin: 0;
 }
 
 /* Headings */
 h1 {
     font-size: 2.5rem;
     color: #d63384;
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.8);
     margin-bottom: 20px;
 }
 
 /* Paragraphs */
 p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #444;
-}
-
-/* Buttons container */
-.button-container {
-    margin-top: 20px;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    margin: 10px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: #ff69b4;
-    color: white;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #ff1493;
-    transform: scale(1.05);
 }
 
 /* Links */
 a {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 1.1rem;
     text-decoration: none;
     color: #d63384;
@@ -63,4 +37,71 @@ a {
 a:hover {
     color: #9d174d;
     text-decoration: underline;
+}
+
+/* Buttons */
+button, .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover, .btn:hover {
+    background-color: #ff1493;
+    transform: scale(1.05);
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    width: 250px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: #ff69b4;
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: #ffe4ec;
 }
