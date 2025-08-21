@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>All Users</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>User List</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-    <h1>👥 User List</h1>
-    <table border="1" cellpadding="10" style="margin: auto; background: #fff;">
+    <h2>List of Users</h2>
+    <table border="1">
         <tr>
-            <th>ID</th>
             <th>Name</th>
-            <th>Email</th>
+            <th>Email (Masked)</th>
+            <th>Phone (Masked)</th>
         </tr>
         <tr th:each="user : ${users}">
-            <td th:text="${user.id}"></td>
             <td th:text="${user.name}"></td>
             <td th:text="${user.email}"></td>
+            <td th:text="${user.phoneNumber}"></td>
         </tr>
     </table>
-    <br>
-    <a href="/form">➕ Add New User</a>
 </body>
 </html>

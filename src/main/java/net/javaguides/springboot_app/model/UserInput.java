@@ -1,9 +1,6 @@
 package net.javaguides.springboot_app.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class UserInput {
@@ -13,17 +10,20 @@ public class UserInput {
     private Long id;
 
     private String name;
-    private String email;
 
-    // Constructors
+    // encrypted data
+    private String email;
+    private String phoneNumber;
+
     public UserInput() {}
 
-    public UserInput(String name, String email) {
+    public UserInput(String name, String email, String phoneNumber) {
         this.name = name;
         this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
-    // Getters & Setters
+    // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -32,4 +32,7 @@ public class UserInput {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public String getPhoneNumber() { return phoneNumber; }
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 }
