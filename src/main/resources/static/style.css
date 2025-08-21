@@ -1,0 +1,66 @@
+/* style.css */
+
+/* Apply a global pink background with some padding */
+body {
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffe4e1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 40px;
+    color: #333;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    color: #d63384;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+/* Buttons container */
+.button-container {
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ff69b4;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff1493;
+    transform: scale(1.05);
+}
+
+/* Links */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #d63384;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #9d174d;
+    text-decoration: underline;
+}
