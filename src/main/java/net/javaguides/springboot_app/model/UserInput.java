@@ -1,6 +1,9 @@
 package net.javaguides.springboot_app.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class UserInput {
@@ -10,8 +13,6 @@ public class UserInput {
     private Long id;
 
     private String name;
-
-    // encrypted data
     private String email;
     private String phoneNumber;
 
