@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>User List</title>
+    <title>Admin User List</title>
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
-    <h2>List of Users (Masked)</h2>
+    <h2>Admin - List of Users (Decrypted Data)</h2>
     <table border="1">
         <tr>
             <th>Name</th>
-            <th>Email (Masked)</th>
-            <th>Phone (Masked)</th>
+            <th>Email (Actual)</th>
+            <th>Phone (Actual)</th>
         </tr>
         <tr th:each="user : ${users}">
             <td th:text="${user.name}"></td>
@@ -20,6 +20,6 @@
     </table>
 
     <p><a th:href="@{/form}">Go Back to Form</a></p>
-    <p><a th:href="@{/admin/users}">View Admin Data</a></p>
+    <p><a th:href="@{/users}">View Masked Data</a></p>
 </body>
 </html>

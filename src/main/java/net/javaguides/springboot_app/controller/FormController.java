@@ -25,22 +25,37 @@ public class FormController {
 
     @PostMapping("/submitForm")
     public String submitForm(@ModelAttribute UserInput userInput) {
-        // Save normally (no encryption)
+        // Encrypt before saving
+        userInput.setEmail(EncryptionUtil.encrypt(userInput.getEmail()));
+        userInput.setPhoneNumber(EncryptionUtil.encrypt(userInput.getPhoneNumber()));
         userInputRepository.save(userInput);
         return "redirect:/users";
     }
 
+    // Normal User View (Masked)
     @GetMapping("/users")
     public String showUsers(Model model) {
         var users = userInputRepository.findAll();
-
-        // Only mask before showing
         for (UserInput user : users) {
-            user.setEmail(EncryptionUtil.maskEmail(user.getEmail()));
-            user.setPhoneNumber(EncryptionUtil.maskPhone(user.getPhoneNumber()));
-        }
+            String decryptedEmail = EncryptionUtil.decrypt(user.getEmail());
+            String decryptedPhone = EncryptionUtil.decrypt(user.getPhoneNumber());
 
+            user.setEmail(EncryptionUtil.maskEmail(decryptedEmail));
+            user.setPhoneNumber(EncryptionUtil.maskPhone(decryptedPhone));
+        }
         model.addAttribute("users", users);
         return "users";
+    }
+
+    // Admin View (Decrypted Data)
+    @GetMapping("/admin/users")
+    public String showAdminUsers(Model model) {
+        var users = userInputRepository.findAll();
+        for (UserInput user : users) {
+            user.setEmail(EncryptionUtil.decrypt(user.getEmail()));
+            user.setPhoneNumber(EncryptionUtil.decrypt(user.getPhoneNumber()));
+        }
+        model.addAttribute("users", users);
+        return "admin-users";
     }
 }
